@@ -1,0 +1,25 @@
+## IDE
+.idea
+.vscode
+*.iml
+**/.vs
+**/obj
+
+## local and backups
+*~
+*.bak
+*.local
+*.swp
+*.tmp
+.*sh_history
+
+## Python App
+venv*
+bin
+build
+dist
+target
+__pycache__
+
+## config
+.env
