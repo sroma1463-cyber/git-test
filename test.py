@@ -1,7 +1,7 @@
 import os
 import json
 
-# Проверить наличие конфигурационного файлы
+# Проверить наличие конфигурационного файла
 if os.path.isfile('config.json'):
     print("конфигурационный файл найден")
 
@@ -12,20 +12,18 @@ if os.path.isfile('config.json'):
         #print("config=", config)
 
     # проверить содержимое переменных на валидность
-    if 'ip' in config:
-        print("айпи есть")
-    else:
-        print("айпи нет")
+    if 'ip' not in config:
+        print("ERROR: айпи нет")
         exit(1)
-    if 'login' in config:
-        print("логин есть")
-    else:
-        print("логина нема")
+    if 'login' not in config:
+        print("ERROR: логина нема")
         exit(1)
     if 'password' in config:
-        print("пароль есть")
+        if len(config["password"]) < 5 :
+            print("ERROR: пароль короче 5 символов")
+            exit(1)
     else:
-        print("пароля нема")
+        print("ERROR: пароля нема")
         exit(1)
 
     # попытаться соединиться
