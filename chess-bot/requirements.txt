@@ -1,0 +1,3 @@
+# pip install -r requirements.txt
+chess==1.11.2
+PyAutoGUI==0.9.54
